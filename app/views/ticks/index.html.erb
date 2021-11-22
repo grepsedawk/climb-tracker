@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ticks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Climb name</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ticks.each do |tick| %>
+      <tr>
+        <td><%= tick.climb_name %></td>
+        <td><%= tick.rating %></td>
+        <td><%= link_to 'Show', tick %></td>
+        <td><%= link_to 'Edit', edit_tick_path(tick) %></td>
+        <td><%= link_to 'Destroy', tick, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tick', new_tick_path %>
